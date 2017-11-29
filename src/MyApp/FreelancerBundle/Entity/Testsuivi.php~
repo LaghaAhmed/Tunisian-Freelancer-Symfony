@@ -1,0 +1,47 @@
+<?php
+
+namespace MyApp\FreelancerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Testsuivi
+ *
+ * @ORM\Table(name="testsuivi")
+ * @ORM\Entity
+ */
+class Testsuivi
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="utilisateur_id", type="integer", nullable=false)
+     */
+    private $utilisateurId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="test_id", type="integer", nullable=false)
+     */
+    private $testId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="score", type="integer", nullable=false)
+     */
+    private $score;
+
+
+}
+

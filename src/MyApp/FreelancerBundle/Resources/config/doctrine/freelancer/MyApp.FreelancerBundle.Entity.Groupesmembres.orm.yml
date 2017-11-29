@@ -1,0 +1,25 @@
+MyApp\FreelancerBundle\Entity\Groupesmembres:
+    type: entity
+    table: groupesmembres
+    id:
+        memberId:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+            id: true
+            column: member_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        groupId:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            column: group_id
+    lifecycleCallbacks: {  }

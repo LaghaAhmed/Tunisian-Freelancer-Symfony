@@ -1,0 +1,44 @@
+{% extends 'FreelancerBundle::layout.html.twig' %}
+
+{% block body -%}
+    <h1>Cv</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Cvid</th>
+                <td>{{ entity.cvId }}</td>
+            </tr>
+            <tr>
+                <th>Skills</th>
+                <td>{{ entity.skills }}</td>
+            </tr>
+            <tr>
+                <th>Certifications</th>
+                <td>{{ entity.certifications }}</td>
+            </tr>
+            <tr>
+                <th>Education</th>
+                <td>{{ entity.education }}</td>
+            </tr>
+            <tr>
+                <th>Experiences</th>
+                <td>{{ entity.experiences }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('cv') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('cv_edit', { 'id': entity.cvId }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

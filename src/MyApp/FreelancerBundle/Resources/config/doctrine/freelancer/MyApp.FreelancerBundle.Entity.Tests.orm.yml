@@ -1,0 +1,76 @@
+MyApp\FreelancerBundle\Entity\Tests:
+    type: entity
+    table: tests
+    id:
+        testId:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            id: true
+            column: test_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        nomtest:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+            column: nomTest
+        descriptiontest:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+            column: descriptionTest
+        typetest:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+            column: typeTest
+        nombrequestions:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            column: nombreQuestions
+    manyToMany:
+        question:
+            targetEntity: MyApp\FreelancerBundle\Entity\Questions
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: test
+            joinTable:
+                name: testquestions
+                schema: null
+                joinColumns:
+                    -
+                        name: test_id
+                        unique: false
+                        nullable: true
+                        onDelete: null
+                        columnDefinition: null
+                        referencedColumnName: test_id
+                inverseJoinColumns:
+                    -
+                        name: question_id
+                        unique: false
+                        nullable: true
+                        onDelete: null
+                        columnDefinition: null
+                        referencedColumnName: question_id
+            orderBy: null
+    lifecycleCallbacks: {  }

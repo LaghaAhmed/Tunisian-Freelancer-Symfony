@@ -1,0 +1,45 @@
+{% extends "FreelancerBundle::layout.html.twig" %}
+
+{% block body -%}
+    <h1>Projetv list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Freelancer</th>
+                <th>Jobowner</th>
+                <th>Projetid</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('projetv_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.freelancer }}</td>
+                <td>{{ entity.jobowner }}</td>
+                <td>{{ entity.projetid }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('projetv_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('projetv_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('projetv_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

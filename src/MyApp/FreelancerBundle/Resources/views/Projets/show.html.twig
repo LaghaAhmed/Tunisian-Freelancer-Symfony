@@ -1,0 +1,68 @@
+{% extends "FreelancerBundle::layout.html.twig" %}
+
+{% block body -%}
+    <h1>Projets</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Projetid</th>
+                <td>{{ entity.projetId }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ entity.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ entity.description }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ entity.categorie }}</td>
+            </tr>
+            <tr>
+                <th>Nombrefreelancer</th>
+                <td>{{ entity.nombreFreelancer }}</td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td>{{ entity.level }}</td>
+            </tr>
+            <tr>
+                <th>Typecontrat</th>
+                <td>{{ entity.typecontrat }}</td>
+            </tr>
+            <tr>
+                <th>Salaire</th>
+                <td>{{ entity.salaire }}</td>
+            </tr>
+            <tr>
+                <th>Duree</th>
+                <td>{{ entity.duree }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ entity.etat }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ entity.username }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('projets') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('projets_edit', { 'id': entity.projetId }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

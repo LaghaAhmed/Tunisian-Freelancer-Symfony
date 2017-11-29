@@ -1,0 +1,40 @@
+<?php
+
+namespace MyApp\FreelancerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Groupes
+ *
+ * @ORM\Table(name="groupes")
+ * @ORM\Entity
+ */
+class Groupes
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="group_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $groupId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="chefgroup_id", type="integer", nullable=false)
+     */
+    private $chefgroupId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomgroup", type="string", length=255, nullable=false)
+     */
+    private $nomgroup;
+
+
+}
+

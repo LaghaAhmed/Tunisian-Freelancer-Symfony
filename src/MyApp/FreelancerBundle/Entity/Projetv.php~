@@ -1,0 +1,47 @@
+<?php
+
+namespace MyApp\FreelancerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Projetv
+ *
+ * @ORM\Table(name="projetv")
+ * @ORM\Entity
+ */
+class Projetv
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="freelancer", type="string", length=255, nullable=true)
+     */
+    private $freelancer;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="jobowner", type="string", length=255, nullable=true)
+     */
+    private $jobowner;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="projetid", type="integer", nullable=true)
+     */
+    private $projetid;
+
+
+}
+

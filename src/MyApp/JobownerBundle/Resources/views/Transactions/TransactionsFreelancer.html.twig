@@ -1,0 +1,72 @@
+{% extends "JobownerBundle::layoutJobowner.html.twig" %}
+{% block content %}
+<center>
+<br><br>
+<h1 style="color: #3c8dbc;">Liste des transactions Freelancer</h1><br>
+{% for m in montant %}
+<h3>Votre montant : {{m.montant}} jetons</h3>
+{% endfor %}
+<br><br>
+
+
+
+
+<form action="{{ path("tunisian_freelancer_searchTransactionByFreelancer")}}" method="post">
+    Email Jobowner: 
+     <select name="email">
+                <option value="tous">Tous les emails</option>
+                {% for e in listEmailJobowner %}
+                <option value="{{e.email}}">{{e.email}}</option>
+                {% endfor %}
+     </select>&nbsp;
+    De : 
+    <input type="date" name="date1" required/>&nbsp;
+    à : 
+    <input type="date" name="date2" required/>&nbsp;
+    <input type="hidden" name="idf" value="{{idf}}"/>&nbsp;
+    <input type="submit" value="Rechercher"/>&nbsp;
+    <a href="{{ path("tunisian_freelancer_listTransactionByFreelancer", {'id':idf})}}">Montrer tous les transactions</a>
+</form><br><br><br>
+
+{% if listTransactionByfreelancer|length > 0 %}
+    
+<table border=1>
+    
+<tr>
+        <th align="center">Nom de jobowner</th>
+        <th align="center">Prénom de jobowner</th>
+        <th align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email de jobowner</th>
+        <th align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date</th>
+        <th align="center">Montant</th>
+</tr>  
+
+
+    {% for lfp in listTransactionByfreelancer %}
+        
+        
+<tr>
+        
+        <td align="center">{{lfp.nom}}</td>
+        <td align="center">{{lfp.prenom}}</td>
+        <td align="center">{{lfp.email}}</td>
+        <td align="center">{{lfp.date|date('Y-m-d')}}</td>
+        <td align="center">{{lfp.montant}}</td>
+</tr>   
+
+
+    {% endfor %}
+    
+    
+</table>
+    <br>
+    <div class="navigation">
+    {{ knp_pagination_render(listTransactionByfreelancer) }}
+</div>
+    {% endif %}
+    
+   {% if listTransactionByfreelancer == null %}
+      <h1 style="color: #3c8dbc;">Pas de transactions :( </h1>  
+   {% endif %}
+
+</center>
+ {% endblock %}

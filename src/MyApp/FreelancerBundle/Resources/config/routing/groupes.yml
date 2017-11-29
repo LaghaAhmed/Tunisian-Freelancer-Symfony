@@ -1,0 +1,30 @@
+groupes:
+    path:     /
+    defaults: { _controller: "FreelancerBundle:Groupes:index" }
+
+groupes_show:
+    path:     /{id}/show
+    defaults: { _controller: "FreelancerBundle:Groupes:show" }
+
+groupes_new:
+    path:     /new
+    defaults: { _controller: "FreelancerBundle:Groupes:new" }
+
+groupes_create:
+    path:     /create
+    defaults: { _controller: "FreelancerBundle:Groupes:create" }
+    methods:  POST
+
+groupes_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FreelancerBundle:Groupes:edit" }
+
+groupes_update:
+    path:     /{id}/update
+    defaults: { _controller: "FreelancerBundle:Groupes:update" }
+    methods:  [POST, PUT]
+
+groupes_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FreelancerBundle:Groupes:delete" }
+    methods:  [POST, DELETE]

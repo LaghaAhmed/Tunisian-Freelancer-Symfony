@@ -1,0 +1,54 @@
+{% extends "FreelancerBundle::layout.html.twig" %}
+
+{% block body -%}
+    <h1>Projetsuivi list</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Projetid</th>
+                <th>Jobowner</th>
+                <th>Freelancer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.projetid }}</td>
+                <td>{{ entity.jobowner }}</td>
+                <td>{{ entity.freelancer }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        
+         <center>
+            <div class="col-md-9" align="center">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Composer un nouveau message</h3>
+                        <div class="box-body table-responsive no-padding">
+                            <form action="{{ path('my_app_mailer') }}" method="POST" >
+                                </br>
+                                <input type="text" name="username" class="form-control" placeholder="from:"/></br>
+                                <input type="password" name="password" class="form-control" placeholder="Password:"/></br>                            
+                                <input type="text" name="email" class="form-control" placeholder="To:"/></br>
+                                <input type="text" name="Subject" class="form-control" placeholder="Subject:"/></br>
+
+
+                                </br>
+                                <div class="form-group">
+                                    <textarea type="text" name="message" id="compose-textarea" class="form-control" style="height: 300px"></textarea>
+                                </div>
+
+                                <input type="submit" name="send" class="btn"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+
+      
+    {% endblock %}

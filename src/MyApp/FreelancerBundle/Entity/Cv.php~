@@ -1,0 +1,54 @@
+<?php
+
+namespace MyApp\FreelancerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Cv
+ *
+ * @ORM\Table(name="cv")
+ * @ORM\Entity
+ */
+class Cv
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cv_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $cvId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="skills", type="string", length=255, nullable=false)
+     */
+    private $skills;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="certifications", type="string", length=255, nullable=false)
+     */
+    private $certifications;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="education", type="string", length=255, nullable=false)
+     */
+    private $education;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="experiences", type="string", length=255, nullable=false)
+     */
+    private $experiences;
+
+
+}
+

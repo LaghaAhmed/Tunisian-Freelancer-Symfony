@@ -1,0 +1,39 @@
+MyApp\JobownerBundle\Entity\Feedbacks:
+    type: entity
+    table: feedbacks
+    id:
+        feedbackId:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            id: true
+            column: feedback_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        utilisateurId:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            column: utilisateur_id
+        commentaire:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+        score:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+    lifecycleCallbacks: {  }

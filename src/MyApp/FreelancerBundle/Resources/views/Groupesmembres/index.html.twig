@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Groupesmembres list</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Memberid</th>
+                <th>Groupid</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('groupesmembres_show', { 'id': entity.memberId }) }}">{{ entity.memberId }}</a></td>
+                <td>{{ entity.groupId }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('groupesmembres_show', { 'id': entity.memberId }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('groupesmembres_edit', { 'id': entity.memberId }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('groupesmembres_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

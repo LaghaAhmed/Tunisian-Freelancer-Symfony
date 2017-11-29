@@ -1,0 +1,30 @@
+projetsuivi:
+    path:     /
+    defaults: { _controller: "FreelancerBundle:Projetsuivi:index" }
+
+projetsuivi_show:
+    path:     /{id}/show
+    defaults: { _controller: "FreelancerBundle:Projetsuivi:show" }
+
+projetsuivi_new:
+    path:     /new
+    defaults: { _controller: "FreelancerBundle:Projetsuivi:new" }
+
+projetsuivi_create:
+    path:     /create
+    defaults: { _controller: "FreelancerBundle:Projetsuivi:create" }
+    methods:  POST
+
+projetsuivi_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FreelancerBundle:Projetsuivi:edit" }
+
+projetsuivi_update:
+    path:     /{id}/update
+    defaults: { _controller: "FreelancerBundle:Projetsuivi:update" }
+    methods:  [POST, PUT]
+
+projetsuivi_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FreelancerBundle:Projetsuivi:delete" }
+    methods:  [POST, DELETE]

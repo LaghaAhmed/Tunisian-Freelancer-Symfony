@@ -1,0 +1,88 @@
+{% extends "JobownerBundle::layoutJobowner.html.twig" %}
+
+
+{% block content %}
+<center>
+<br><br>
+<h1 style="color: #3c8dbc;">Modifier votre profile</h1>
+<br><br>
+ {% for j in jobowner %}  
+<form action="{{ path("tunisian_freelancer_updateJobowner")}}" method="post">
+    <input type="hidden" name="id" value="{{j.id}}"/>
+    <table> 
+    <tr>
+    <td>Nom de jobowner:</td>
+    <td><input type="text" name="nom" value="{{j.nom}}" required/><br></td> 
+    </tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr>
+    <td>Prénom de jobowner:</td>
+    <td><input type="text" name="prenom" value="{{j.prenom}}" required/><br></td>
+    </tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr>
+    <td>Age de jobowner:</td>
+    <td><input type="number" name="age" value="{{j.age}}" required/><br></td>
+    </tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr>
+    <td>Adresse de jobowner:</td>
+    <td><input type="text" name="adresse" value="{{j.adresse}}" required/><br></td>
+    </tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr>
+    <td>Email de jobowner:</td>
+    <td><input type="text" name="email" value="{{j.email}}" required/><br></td>
+    </tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    </table>
+    <br>
+    <input type="submit" value="Modifier votre profile"/>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ path("tunisian_freelancer_removeJobowner", {'id':j.id})}}">Quitter TunisianFreelancer</a>
+</form>
+</center>
+    {% endfor %}
+{% endblock %}

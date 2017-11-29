@@ -1,0 +1,88 @@
+freelancer_projets:
+    resource: "@FreelancerBundle/Resources/config/routing/projets.yml"
+    prefix:   /projets
+
+freelancer_tests:
+    resource: "@FreelancerBundle/Resources/config/routing/tests.yml"
+    prefix:   /tests
+
+freelancer_projetsuivi:
+    resource: "@FreelancerBundle/Resources/config/routing/projetsuivi.yml"
+    prefix:   /projetsuivi
+
+freelancer_projetv:
+    resource: "@FreelancerBundle/Resources/config/routing/projetv.yml"
+    prefix:   /projetv
+
+freelancer_feedbacks:
+    resource: "@FreelancerBundle/Resources/config/routing/feedbacks.yml"
+    prefix:   /feedbacks
+
+freelancer_utilisateurs:
+    resource: "@FreelancerBundle/Resources/config/routing/utilisateurs.yml"
+    prefix:   /utilisateurs
+
+
+
+freelancer_cv:
+    resource: "@FreelancerBundle/Resources/config/routing/cv.yml"
+    prefix:   /cv
+
+freelancer_groupesmembres:
+    resource: "@FreelancerBundle/Resources/config/routing/groupesmembres.yml"
+    prefix:   /groupesmembres
+
+freelancer_groupes:
+    resource: "@FreelancerBundle/Resources/config/routing/groupes.yml"
+    prefix:   /groupes
+
+
+
+
+
+esprit_freelancer_mail_succ:
+ path: /succ
+ defaults: { _controller: FreelancerBundle:Mail:index }
+esprit_freelancer_mail_form:
+ path: /mail
+ defaults: { _controller: FreelancerBundle:Mail:new }
+esprit_freelancer_mail_sendpage:
+ path: /sendmail
+ defaults: { _controller: FreelancerBundle:Mail:sendMail } 
+    
+    
+    
+    
+esprit_freelancer_map:
+    path:     /map
+    defaults: { _controller: "EspritFreelancerBundle:Map:index" }
+
+esprit_freelancer_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: EspritFreelancerBundle:Default:index }
+    
+    
+
+
+freelancer_update:
+    path:     /updatefreelancer
+    defaults: { _controller: "FreelancerBundle:Utilisateurs:edit" }
+    
+freelancer_show:
+    path:     /showfreelancer
+    defaults: { _controller: "FreelancerBundle:Utilisateurs:showfreelancer" }
+my_app_mailer:
+    path: /senda
+    defaults: { _controller: FreelancerBundle:Mail:envoyer }
+    
+tunisian_freelancer_listTransactionByFreelancer:
+    path: /TransactionFreelancer
+    defaults: { _controller: FreelancerBundle:Transactions:listTransactionFreelancer } 
+tunisian_freelancer_searchTransactionByFreelancer:
+    path: /searchTransactionFreelancer
+    defaults: { _controller: FreelancerBundle:Transactions:searchTransactionFreelancer }  
+
+
+
+
+

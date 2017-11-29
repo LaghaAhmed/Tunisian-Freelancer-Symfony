@@ -1,0 +1,89 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Utilisateurs list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Age</th>
+                <th>Sexe</th>
+                <th>Adresse</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Type</th>
+                <th>Cv</th>
+                <th>Username</th>
+                <th>Usernamecanonical</th>
+                <th>Emailcanonical</th>
+                <th>Enabled</th>
+                <th>Salt</th>
+                <th>Lastlogin</th>
+                <th>Locked</th>
+                <th>Expired</th>
+                <th>Expiresat</th>
+                <th>Confirmationtoken</th>
+                <th>Passwordrequestedat</th>
+                <th>Roles</th>
+                <th>Credentialsexpired</th>
+                <th>Credentialsexpireat</th>
+                <th>Montant</th>
+                <th>Photoprofil</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('utilisateurs_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.prenom }}</td>
+                <td>{{ entity.age }}</td>
+                <td>{{ entity.sexe }}</td>
+                <td>{{ entity.adresse }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.password }}</td>
+                <td>{{ entity.type }}</td>
+                <td>{{ entity.cv }}</td>
+                <td>{{ entity.username }}</td>
+                <td>{{ entity.usernameCanonical }}</td>
+                <td>{{ entity.emailCanonical }}</td>
+                <td>{{ entity.enabled }}</td>
+                <td>{{ entity.salt }}</td>
+                <td>{% if entity.lastLogin %}{{ entity.lastLogin|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.locked }}</td>
+                <td>{{ entity.expired }}</td>
+                <td>{% if entity.expiresAt %}{{ entity.expiresAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.confirmationToken }}</td>
+                <td>{% if entity.passwordRequestedAt %}{{ entity.passwordRequestedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.roles }}</td>
+                <td>{{ entity.credentialsExpired }}</td>
+                <td>{% if entity.credentialsExpireAt %}{{ entity.credentialsExpireAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.montant }}</td>
+                <td>{{ entity.photoprofil }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('utilisateurs_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('utilisateurs_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('utilisateurs_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

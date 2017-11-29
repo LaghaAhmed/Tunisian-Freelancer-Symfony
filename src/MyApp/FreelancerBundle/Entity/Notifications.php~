@@ -1,0 +1,54 @@
+<?php
+
+namespace MyApp\FreelancerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Notifications
+ *
+ * @ORM\Table(name="notifications")
+ * @ORM\Entity
+ */
+class Notifications
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="notification_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $notificationId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="sender_id", type="integer", nullable=false)
+     */
+    private $senderId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="receiver_id", type="integer", nullable=false)
+     */
+    private $receiverId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="message", type="string", length=255, nullable=false)
+     */
+    private $message;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="etat", type="boolean", nullable=false)
+     */
+    private $etat;
+
+
+}
+

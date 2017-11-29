@@ -1,0 +1,48 @@
+{% extends "FreelancerBundle::layout.html.twig" %}
+
+{% block body -%}
+    <h1>Projets list</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Categorie</th>
+                <th>Nombrefreelancer</th>
+                <th>Level</th>
+                <th>Typecontrat</th>
+                <th>Salaire</th>
+                <th>Duree</th>
+                <th>Etat</th>
+                <th>Username</th>
+                <th>Postuler</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+           
+                <td>{{ entity.titre }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.categorie }}</td>
+                <td>{{ entity.nombreFreelancer }}</td>
+                <td>{{ entity.level }}</td>
+                <td>{{ entity.typecontrat }}</td>
+                <td>{{ entity.salaire }}</td>
+                <td>{{ entity.duree }}</td>
+                <td>{{ entity.etat }}</td>
+                <td>{{ entity.username }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('projetv_ajout_amine', { 'id': entity.projetId,'jobowner':entity.username }) }}">Postuler</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% endblock %}

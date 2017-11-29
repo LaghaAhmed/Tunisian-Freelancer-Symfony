@@ -1,0 +1,36 @@
+{% extends 'FreelancerBundle::layout.html.twig' %}
+
+{% block body -%}
+    <h1>Groupes</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Groupid</th>
+                <td>{{ entity.groupId }}</td>
+            </tr>
+            <tr>
+                <th>Chefgroupid</th>
+                <td>{{ entity.chefgroupId }}</td>
+            </tr>
+            <tr>
+                <th>Nomgroup</th>
+                <td>{{ entity.nomgroup }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('groupes') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('groupes_edit', { 'id': entity.groupId }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

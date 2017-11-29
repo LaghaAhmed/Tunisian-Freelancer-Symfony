@@ -1,0 +1,54 @@
+{% extends "JobownerBundle::layoutJobowner.html.twig" %}
+{% block content %}
+ 
+    <div class="row">
+        
+        
+        <div class="col-md-3 col-sm-4">
+            <!-- BOXES are complex enough to move the .box-header around.
+                      This is an example of having the box header within the box body -->
+            <div class="box-header">
+                <i class="fa fa-inbox"></i>
+                <h3 class="box-title">Projet</h3>
+            </div>
+            <!-- compose message btn -->
+            <a class="btn btn-block btn-primary" data-toggle="modal" href="{{path('my_app_mail1')}}"><i class="fa fa-pencil"></i> Compose Message</a>
+            <!-- Navigation - folders-->
+            <div style="margin-top: 15px;">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="header">Folders</li>
+                    <li ><a href="{{path('freelance_AddProjets')}}"><i class="fa fa-circle-o"></i> Ajout d'un projet</a></li>
+                    <li><a href="{{path('Freelance_Affichage_Pjob')}}"><i class="fa fa-circle-o"></i> Liste de mes projets</a></li>
+                    <li ><a href="{{path('Freelance_Affichage_Projets')}}"><i class="fa fa-circle-o"></i> Liste de tous les projets</a></li>
+                    <li ><a href="{{path('Freelance_Projet_encours')}}"><i class="fa fa-star"></i> Liste des projets en cours</a></li>
+                </ul>
+            </div>
+        </div><!-- /.col (LEFT) -->
+
+        
+        
+        
+       <div class="col-md-9" align="center">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                       <h1>Affecter un freelancer</h1>
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <th>ID</th>
+                            <th>Freelance</th>
+                                {% for modele in modeles%}
+                                <tr>
+                                    <td>{{modele.freelancer}}</td>
+                                    <td>{{modele.jobowner}}</td>
+                                    <td>{{modele.projetId}}</td>
+                                    <td><a href="{{path('Freelance_supprimer_projet',{'id':modele.projetId})}}">Supprimer</a></td>
+                                    <td><a href="{{path('Freelance_ajout_Pjob',{'id':modele.projetId,'freelancer':modele.freelancer,'jobowner':modele.jobowner})}}">affecter</a></td>
+                                </tr>
+                            {% endfor%}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+tests:
+    path:     /
+    defaults: { _controller: "FreelancerBundle:Tests:index" }
+
+tests_show:
+    path:     /{id}/show
+    defaults: { _controller: "FreelancerBundle:Tests:show" }
+
+tests_new:
+    path:     /new
+    defaults: { _controller: "FreelancerBundle:Tests:new" }
+
+tests_create:
+    path:     /create
+    defaults: { _controller: "FreelancerBundle:Tests:create" }
+    methods:  POST
+
+tests_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FreelancerBundle:Tests:edit" }
+
+tests_update:
+    path:     /{id}/update
+    defaults: { _controller: "FreelancerBundle:Tests:update" }
+    methods:  [POST, PUT]
+
+tests_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FreelancerBundle:Tests:delete" }
+    methods:  [POST, DELETE]

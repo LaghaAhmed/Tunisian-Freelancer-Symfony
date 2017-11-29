@@ -1,0 +1,30 @@
+projetv:
+    path:     /
+    defaults: { _controller: "FreelancerBundle:Projetv:index" }
+
+projetv_show:
+    path:     /{id}/show
+    defaults: { _controller: "FreelancerBundle:Projetv:show" }
+
+projetv_new:
+    path:     /new
+    defaults: { _controller: "FreelancerBundle:Projetv:new" }
+
+projetv_create:
+    path:     /create
+    defaults: { _controller: "FreelancerBundle:Projetv:create" }
+    methods:  POST
+
+projetv_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FreelancerBundle:Projetv:edit" }
+
+projetv_update:
+    path:     /{id}/update
+    defaults: { _controller: "FreelancerBundle:Projetv:update" }
+    methods:  [POST, PUT]
+
+projetv_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FreelancerBundle:Projetv:delete" }
+    methods:  [POST, DELETE]

@@ -1,0 +1,45 @@
+{% extends "FreelancerBundle::layout.html.twig" %}
+
+
+{% block body -%}
+    <h1>Feedbacks list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Feedbackid</th>
+                <th>Utilisateurid</th>
+                <th>Commentaire</th>
+                <th>Score</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('feedbacks_show', { 'id': entity.feedbackId }) }}">{{ entity.feedbackId }}</a></td>
+                <td>{{ entity.utilisateurId }}</td>
+                <td>{{ entity.commentaire }}</td>
+                <td>{{ entity.score }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('feedbacks_show', { 'id': entity.feedbackId }) }}">show</a>
+                    </li>
+                    <li>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('feedbacks_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

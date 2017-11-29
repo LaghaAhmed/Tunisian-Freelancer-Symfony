@@ -1,0 +1,48 @@
+MyApp\JobownerBundle\Entity\Transactions:
+    type: entity
+    table: transactions
+    repositoryClass: MyApp\JobownerBundle\Entity\TransactionsRepository
+    id:
+        transactionId:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            id: true
+            column: transaction_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        utilisateurId:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            column: utilisateur_id
+        payeurId:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            column: payeur_id
+        date:
+            type: date
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+        montant:
+            type: float
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 10
+    lifecycleCallbacks: {  }

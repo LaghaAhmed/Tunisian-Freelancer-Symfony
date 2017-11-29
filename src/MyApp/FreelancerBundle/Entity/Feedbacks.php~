@@ -1,0 +1,47 @@
+<?php
+
+namespace MyApp\FreelancerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Feedbacks
+ *
+ * @ORM\Table(name="feedbacks")
+ * @ORM\Entity
+ */
+class Feedbacks
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="feedback_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $feedbackId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="utilisateur_id", type="integer", nullable=false)
+     */
+    private $utilisateurId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire", type="string", length=255, nullable=false)
+     */
+    private $commentaire;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="score", type="integer", nullable=false)
+     */
+    private $score;
+
+
+}
+

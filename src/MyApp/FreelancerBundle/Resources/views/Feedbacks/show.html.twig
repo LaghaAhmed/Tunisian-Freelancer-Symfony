@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Feedbacks</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Feedbackid</th>
+                <td>{{ entity.feedbackId }}</td>
+            </tr>
+            <tr>
+                <th>Utilisateurid</th>
+                <td>{{ entity.utilisateurId }}</td>
+            </tr>
+            <tr>
+                <th>Commentaire</th>
+                <td>{{ entity.commentaire }}</td>
+            </tr>
+            <tr>
+                <th>Score</th>
+                <td>{{ entity.score }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('feedbacks') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('feedbacks_edit', { 'id': entity.feedbackId }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

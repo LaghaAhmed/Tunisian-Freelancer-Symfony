@@ -1,0 +1,45 @@
+MyApp\FreelancerBundle\Entity\Cv:
+    type: entity
+    table: cv
+    id:
+        cvId:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            id: true
+            column: cv_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        skills:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+        certifications:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+        education:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+        experiences:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+    lifecycleCallbacks: {  }

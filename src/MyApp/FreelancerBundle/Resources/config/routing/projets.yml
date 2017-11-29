@@ -1,0 +1,33 @@
+projets:
+    path:     /
+    defaults: { _controller: "FreelancerBundle:Projets:index" }
+
+projets_show:
+    path:     /{id}/show
+    defaults: { _controller: "FreelancerBundle:Projets:show" }
+
+projets_new:
+    path:     /new
+    defaults: { _controller: "FreelancerBundle:Projets:new" }
+
+projets_create:
+    path:     /create
+    defaults: { _controller: "FreelancerBundle:Projets:create" }
+    methods:  POST
+
+projets_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FreelancerBundle:Projets:edit" }
+
+projets_update:
+    path:     /{id}/update
+    defaults: { _controller: "FreelancerBundle:Projets:update" }
+    methods:  [POST, PUT]
+
+projets_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FreelancerBundle:Projets:delete" }
+    methods:  [POST, DELETE]
+projetv_ajout_amine:
+    path:     /{id}/{jobowner}/ajout
+    defaults: { _controller: "FreelancerBundle:Projets:ajout" }

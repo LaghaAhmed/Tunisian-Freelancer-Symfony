@@ -1,0 +1,30 @@
+utilisateurs:
+    path:     /
+    defaults: { _controller: "FreelancerBundle:Utilisateurs:index" }
+
+utilisateurs_show:
+    path:     /{id}/show
+    defaults: { _controller: "FreelancerBundle:Utilisateurs:show" }
+
+utilisateurs_new:
+    path:     /new
+    defaults: { _controller: "FreelancerBundle:Utilisateurs:new" }
+
+utilisateurs_create:
+    path:     /create
+    defaults: { _controller: "FreelancerBundle:Utilisateurs:create" }
+    methods:  POST
+
+utilisateurs_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FreelancerBundle:Utilisateurs:edit" }
+
+utilisateurs_update:
+    path:     /{id}/update
+    defaults: { _controller: "FreelancerBundle:Utilisateurs:update" }
+    methods:  [POST, PUT]
+
+utilisateurs_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FreelancerBundle:Utilisateurs:delete" }
+    methods:  [POST, DELETE]

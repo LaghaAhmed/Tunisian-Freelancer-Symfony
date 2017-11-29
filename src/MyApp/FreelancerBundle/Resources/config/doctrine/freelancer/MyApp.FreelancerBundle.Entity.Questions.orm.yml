@@ -1,0 +1,57 @@
+MyApp\FreelancerBundle\Entity\Questions:
+    type: entity
+    table: questions
+    id:
+        questionId:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            id: true
+            column: question_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        corpsquestion:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+            column: corpsQuestion
+        poidsquestion:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+            column: poidsQuestion
+        reponse:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+        type:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+            column: Type
+    manyToMany:
+        test:
+            targetEntity: MyApp\FreelancerBundle\Entity\Tests
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: question
+            inversedBy: null
+            joinTable: {  }
+            orderBy: null
+    lifecycleCallbacks: {  }

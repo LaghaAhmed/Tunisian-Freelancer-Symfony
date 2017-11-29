@@ -1,0 +1,77 @@
+jobowner_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: JobownerBundle:Default:index }
+freelance_AddProjets:
+    path: /add
+    defaults: { _controller: JobownerBundle:Projets:add }
+Freelance_Affichage_Projets:
+    path: /list
+    defaults: { _controller: JobownerBundle:Projets:list }
+Freelance_Affichage_Pjob:
+    path: /Projets
+    defaults: { _controller: JobownerBundle:Projets:finduser }
+Freelance_supp_Pjob:
+    path: /supp/{id}
+    defaults: { _controller: JobownerBundle:Projets:delete }
+Freelance_up_Pjob:
+    path: /Modif/{id}
+    defaults: { _controller: JobownerBundle:Projets:update }
+Freelance_find_Pjob:
+    path: /pos/{id}
+    defaults: { _controller: JobownerBundle:Projets:findid }
+Freelance_ajout_Pjob:
+    path: /affecter/{id}/{freelancer}/{jobowner}
+    defaults: { _controller: JobownerBundle:Projets:ajout }
+Freelance_supprimer_projet:
+    path: /suppression/{id}
+    defaults: { _controller: JobownerBundle:Projets:deleteProjet }
+Freelance_Projet_encours:
+    path: /listProjetSuivi
+    defaults: { _controller: JobownerBundle:Projets:listProjetSuivi }
+    
+    
+    
+    
+tunisian_freelancer_addTransactionByJobowner:
+    path:     /addTransactionJobOwner
+    defaults: { _controller: JobownerBundle:Transactions:addTransactionJobOwner }
+tunisian_freelancer_listTransactionByJobowner:
+    path:     /TransactionJobOwner
+    defaults: { _controller: JobownerBundle:Transactions:listTransactionJobOwner }
+tunisian_freelancer_deleteTransactionByJobowner:
+    path:     /deleteTransactionJobOwner/{idt}/{idp}
+    defaults: { _controller: JobownerBundle:Transactions:deleteTransactionJobOwner }
+tunisian_freelancer_updateTransactionByJobowner:
+    path:     /updateTransactionJobOwner
+    defaults: { _controller: JobownerBundle:Transactions:updateTransactionJobOwner }
+tunisian_freelancer_searchTransactionByJobowner:
+    path:     /searchTransactionJobOwner
+    defaults: { _controller: JobownerBundle:Transactions:searchTransactionJobOwner }
+tunisian_freelancer_parametreJobowner:
+    path:     /parametreJobOwner/
+    defaults: { _controller: JobownerBundle:Utilisateurs:parametreJobOwner }
+tunisian_freelancer_updateJobowner:
+    path:     /updateJobOwner
+    defaults: { _controller: JobownerBundle:Utilisateurs:updateJobOwner }
+tunisian_freelancer_removeJobowner:
+    path:     /removeJobOwner/{id}
+    defaults: { _controller: JobownerBundle:Utilisateurs:removeJobOwner }
+tunisian_freelancer_Recherche:
+    path: /recherche/{id}
+    defaults: { _controller: JobownerBundle:Projets:recherche }
+    
+my_app_mail_succ:
+    path: /succ
+    defaults: { _controller: JobownerBundle:Mail:index }
+my_app_mail_form:
+    path: /mail
+    defaults: { _controller: JobownerBundle:Mail:index }
+my_app_mail_sendpage:
+    path: /sendmail
+    defaults: { _controller: JobownerBundle:Mail:sendMail }
+my_app_mail:
+    path: /send
+    defaults: { _controller: JobownerBundle:Mail:envoyer }
+my_app_mail1:
+    path: /envoyer
+    defaults: { _controller: JobownerBundle:Mail:envoyer2 }

@@ -1,0 +1,30 @@
+cv:
+    path:     /
+    defaults: { _controller: "FreelancerBundle:Cv:index" }
+
+cv_show:
+    path:     /{id}/show
+    defaults: { _controller: "FreelancerBundle:Cv:show" }
+
+cv_new:
+    path:     /new
+    defaults: { _controller: "FreelancerBundle:Cv:new" }
+
+cv_create:
+    path:     /create
+    defaults: { _controller: "FreelancerBundle:Cv:create" }
+    methods:  POST
+
+cv_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FreelancerBundle:Cv:edit" }
+
+cv_update:
+    path:     /{id}/update
+    defaults: { _controller: "FreelancerBundle:Cv:update" }
+    methods:  [POST, PUT]
+
+cv_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FreelancerBundle:Cv:delete" }
+    methods:  [POST, DELETE]

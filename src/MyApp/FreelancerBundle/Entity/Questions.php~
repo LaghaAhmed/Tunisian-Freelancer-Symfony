@@ -1,0 +1,68 @@
+<?php
+
+namespace MyApp\FreelancerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Questions
+ *
+ * @ORM\Table(name="questions")
+ * @ORM\Entity
+ */
+class Questions
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="question_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $questionId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corpsQuestion", type="string", length=255, nullable=false)
+     */
+    private $corpsquestion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="poidsQuestion", type="string", length=255, nullable=false)
+     */
+    private $poidsquestion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reponse", type="string", length=255, nullable=false)
+     */
+    private $reponse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Type", type="string", length=255, nullable=false)
+     */
+    private $type;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Tests", mappedBy="question")
+     */
+    private $test;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->test = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}
+

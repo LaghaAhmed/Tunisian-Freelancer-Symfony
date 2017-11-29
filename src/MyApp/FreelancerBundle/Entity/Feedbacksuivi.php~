@@ -1,0 +1,35 @@
+<?php
+
+namespace MyApp\FreelancerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Feedbacksuivi
+ *
+ * @ORM\Table(name="feedbacksuivi")
+ * @ORM\Entity
+ */
+class Feedbacksuivi
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="feedback_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $feedbackId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="utilisateur_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $utilisateurId;
+
+
+}
+

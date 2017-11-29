@@ -1,0 +1,47 @@
+MyApp\JobownerBundle\Entity\Notifications:
+    type: entity
+    table: notifications
+    id:
+        notificationId:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            id: true
+            column: notification_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        senderId:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            column: sender_id
+        receiverId:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            column: receiver_id
+        message:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+        etat:
+            type: boolean
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+    lifecycleCallbacks: {  }
